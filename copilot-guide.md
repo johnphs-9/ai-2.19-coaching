@@ -43,6 +43,25 @@ Start a new Agent mode chat at the beginning of each Part and the Activity, then
 
 ---
 
+## Before you start: Update AGENTS.md
+
+When you created the project, Expo generated an `AGENTS.md` file in the project root. Copilot reads this file automatically at the start of every chat and treats it as standing instructions. Most of it is useful, but two parts do not match this project:
+
+- The **Navigation & Routing** section tells the agent to use Expo Router with routes in `src/app/`. This project uses React Navigation, so this section conflicts with the Part 1 prompt.
+- The **Commands** section tells the agent to run `npx tsc --noEmit` and to "run lint and typecheck" before finishing a task. This project is plain JavaScript with no TypeScript installed, so the typecheck step fails every time.
+
+Open `AGENTS.md` and make these edits:
+
+1. Delete the entire `## Navigation & Routing` section.
+2. In the `## Commands` code block, delete the `npx tsc --noEmit` line.
+3. Change "Run lint and typecheck before declaring any task done." to "Run lint before declaring any task done."
+
+Leave the rest of the file as it is. The "Expo has changed" section in particular is worth keeping, because it tells the agent to check the Expo SDK version in `package.json` and read the matching documentation instead of relying on outdated APIs from its training data.
+
+> **Why this matters:** an instruction file you inherit from a template or a teammate is not automatically correct for your project. When an agent keeps doing something you did not ask for, check its instruction files before rewriting your prompt.
+
+---
+
 ## Part 1: From One Screen to a Navigable App
 
 ### Context to give Copilot first
