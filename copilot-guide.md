@@ -39,6 +39,8 @@ Do not paste every prompt back-to-back without reading the output in between. Ag
 
 > **Common mistake:** pasting the next part's prompt while Copilot is still mid-edit on the current one. Wait for it to finish and for you to complete the review checklist before moving on.
 
+Start a new Agent mode chat at the beginning of each Part and the Activity, then send that section's context prompt first. Keep every prompt within a section, including review questions and follow-ups, in that section's chat.
+
 ---
 
 ## Part 1: From One Screen to a Navigable App
@@ -241,7 +243,7 @@ any items yet.
 
 ## Part 4: Authentication Flow with Biometric Login
 
-This part is larger, so it is worth using the explore-plan-implement-verify sequence explicitly rather than a single combined prompt.
+This part is larger, so it is worth using the explore-plan-implement-verify sequence explicitly rather than a single combined prompt. Run Steps 1 to 3 in the same chat, since Step 2 builds on the plan approved in Step 1.
 
 ### Step 1: Explore and plan
 
@@ -349,7 +351,7 @@ outputs for Android.
 
 Then follow [lesson.md](./lesson.md)'s Part 5 directly for the actual commands: setting the app icon, `eas login`, `git init`, `eas build:configure`, editing `eas.json` for the `apk` build type, and `eas build --platform android --profile preview`.
 
-If the build fails, paste the error into Agent mode and let it investigate:
+If the build fails, paste the error into a new Agent mode chat and let it investigate:
 
 ```text
 The EAS build failed with this error: [paste error]. Investigate the likely
