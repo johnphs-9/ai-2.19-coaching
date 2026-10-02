@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "dogstagram",
+    "slug": "dogstagram",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font",
+      "@react-native-vector-icons/ionicons",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Dogstagram to access your photos so you can pick a picture of your dog.",
+          "cameraPermission": "Allow Dogstagram to use the camera so you can take a picture of your dog."
+        }
+      ]
+    ]
+  }
+}
